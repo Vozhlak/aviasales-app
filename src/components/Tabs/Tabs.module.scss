@@ -1,0 +1,63 @@
+$openSans: 'Open Sans', sans-serif;
+$fontSize: 12px;
+$secondaryBackColor: #2196F3;
+$texColor: #4A4A4A;
+
+.wrap-tabs {
+  display: inline-flex;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+
+}
+
+.tab {
+  display: inline-flex;
+  width: 100%;
+  background-color: transparent;
+
+  &:first-child .tab__label {
+    border-radius: 5px 0 0 5px;
+    border-right-width: 0;
+  }
+  &:last-child .tab__label {
+    border-radius: 0 5px 5px 0;
+    border-left-width: 0;
+  }
+  
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+    width: 100%;
+    cursor: pointer;
+    padding: 15px;
+    border: 1px solid #DFE5EC;
+    color: $texColor;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media (max-width: 495px) {
+      padding: 10px 8px;
+      font-size: 8.5px;
+      line-height: 15px;
+    }
+  }
+  
+  &__input[type=radio] {
+    display: none;
+  }
+  
+  &__input[type=radio]:checked + label {
+    background: $secondaryBackColor;
+    border: 1px solid $secondaryBackColor;
+    color: #FFF;
+  }
+}
+
+

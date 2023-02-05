@@ -1,0 +1,52 @@
+$openSans: 'Open Sans', sans-serif;
+$fontSize: 12px;
+$backColor: #F3F7FA;
+$secondaryBackColor: #2196F3;
+$texColor: #4A4A4A;
+
+.App {
+  display: grid;
+  font-family: $openSans;
+  background-color: $backColor;
+  width: 100vw;
+  overflow-x: hidden;
+  padding-bottom: 25px;
+}
+
+.wrap-logo {
+  margin: 0 auto;
+  &__logo {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 232px minmax(230px, 502px);
+  column-gap: 20px;
+  justify-content: center;
+  padding: 0 20px;
+  
+  @media (max-width: 790px) {
+    grid-template-columns: minmax(230px, 502px);
+  }
+}
+
+.btn-show-tickets {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: $secondaryBackColor;
+  text-transform: uppercase;
+  font-family: $openSans;
+  color: #FFF;
+  font-weight: 600;
+
+  &:hover {
+    transition: all 0.1s ease-in;
+    opacity: .8;
+  }
+}
