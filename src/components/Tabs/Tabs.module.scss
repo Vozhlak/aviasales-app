@@ -4,10 +4,14 @@ $secondaryBackColor: #2196F3;
 $texColor: #4A4A4A;
 
 .wrap-tabs {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   overflow: hidden;
-  margin-bottom: 20px;
+
+  @media (max-width: 470px) {
+    flex-direction: column;
+  }
 
 }
 
@@ -48,6 +52,7 @@ $texColor: #4A4A4A;
       line-height: 15px;
     }
   }
+
   
   &__input[type=radio] {
     display: none;
@@ -57,6 +62,17 @@ $texColor: #4A4A4A;
     background: $secondaryBackColor;
     border: 1px solid $secondaryBackColor;
     color: #FFF;
+  }
+
+  @media (max-width: 470px) {
+    &:first-child .tab__label {
+      border-radius: 5px 5px 0 0;
+      border-width: 1px 1px 0 1px;
+    }
+    &:last-child .tab__label {
+      border-radius: 0 0 5px 5px;
+      border-width: 0 1px 1px 1px;
+    }
   }
 }
 

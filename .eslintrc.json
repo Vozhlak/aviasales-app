@@ -37,7 +37,9 @@
     "react/no-unused-class-component-methods": "off",
     "no-param-reassign": "off",
     "jsx-a11y/no-noninteractive-element-interactions": "off",
-    "jsx-a11y/control-has-associated-label": "off"
+    "jsx-a11y/control-has-associated-label": "off",
+    "import/no-extraneous-dependencies": "off",
+    "default-param-last": "off"
 	},
 	"settings": {
     "react": {

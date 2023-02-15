@@ -3,12 +3,12 @@ $fontSize: 12px;
 $backColor: #F3F7FA;
 $secondaryBackColor: #2196F3;
 $texColor: #4A4A4A;
+$loadergradient: $backColor;
 
 .App {
   display: grid;
   font-family: $openSans;
   background-color: $backColor;
-  width: 100vw;
   overflow-x: hidden;
   padding-bottom: 25px;
 }
@@ -48,5 +48,82 @@ $texColor: #4A4A4A;
   &:hover {
     transition: all 0.1s ease-in;
     opacity: .8;
+  }
+}
+
+.msg-no-tickets {
+  margin-top: 20px;
+  padding: 20px;
+  padding-left: 80px;
+  height: 130px;
+  font-size: 16px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background: url('../../assets/warning.svg') no-repeat 0 5px, #FFF;
+  background-size: 75px;
+  
+  @media (max-width: 420px) {
+    background-position: 0 15px;
+    padding-left: 60px;
+    background-size: 55px;
+    
+  }
+}
+
+.wrap .spinner {
+  animation: rotate 2s linear infinite;
+  display: block;
+  margin: 50px auto 0;
+  width: 50px;
+  height: 50px;
+  
+  & .path {
+    stroke: $secondaryBackColor;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+  
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+.loader {
+  border-radius: 0 3px;
+  animation: loader 3s linear infinite;
+  background-image: linear-gradient(
+    45deg,
+    $loadergradient 25%,
+    transparent 50%,
+    transparent 50%,
+    $loadergradient 0,
+    $loadergradient 75%,
+    transparent 75%,
+    transparent
+  ) !important;
+  background-size: 3rem 3rem !important;
+}
+
+@keyframes loader {
+  0% {
+    background-position-x: 9rem;
   }
 }
